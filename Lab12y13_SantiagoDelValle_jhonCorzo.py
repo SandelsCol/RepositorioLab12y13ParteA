@@ -5,8 +5,9 @@ premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
 Conteo_final_Normal= len(cartas)
 Conteo_final_premium= len(premium)
 
-def imprimir(x,Y):
+def imprimir(x,y):
     Conteo_final_=  Conteo_final_Normal + Conteo_final_premium
     print("El numero de cartas normales es",Conteo_final_Normal,",El de cartas premium es",Conteo_final_premium,"Y en total del juego son",Conteo_final_,"Cartas")
+    print("Estas son las cartas estandares",cartas,"y a continuación las premium",premium)
 
 imprimir(Conteo_final_Normal,Conteo_final_premium)
