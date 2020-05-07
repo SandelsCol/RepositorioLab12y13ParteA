@@ -17,6 +17,7 @@ def generador(n,p):
         print("La nueva baraja llamada jugador contiene las siguientes cartas",jugador,"Siendo un total de",len(jugador),"cartas")
     else:
         print("El sistema no acepta esos números , siga por favor los procedimientos")
+
 n=int(input("""Digite Una cantidad de N elementos,Siendo 1 su minimo y 50 su máximo
 """))
 p=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su máximo
@@ -24,32 +25,34 @@ p=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su m
 generador(n,p)
 print(generador)
 
-#Creación de la función combinador
+#Creación de la función combinador/relacioón de cartas premium con normales con combinador
 
-def combinador(x,c,v,b,n):
-    lista_A= ["Lee","Brekae","Vi","Teemo","Darius","Garen","Bardo","Ezreal","Taric","Ahri","Zed"]
-    lista_B=["Nautilus","Jinx","Quixana","Hecarim","Zac","Veigar","Xin","Blis","Tresh","Lucian","Sett"]
-    Lista_R2=[lista_A[x-1],lista_B[c-1],lista_A[v-1],lista_B[b-1],lista_A[n-1]]
-    print("La nueva lista es",Lista_R2)
+def combinador(personaje_1,personaje_2,personaje_3,personaje_4,personaje_5,personaje_premium):
+    if 1<=personaje_1<=100 and 1<=personaje_2<=100 and 1<=personaje_3<=100  and 1<=personaje_4<=100 and 1<=personaje_5<=100 and 1<=personaje_premium<=5:
+        cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
+        premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
+        Lista_R2=[cartas[personaje_1-1],cartas[personaje_2-1],cartas[personaje_3-1],cartas[personaje_4-1],cartas[personaje_5-1],premium[personaje_premium-1]]
+        print(Lista_R2)
+    else:
+        print("El sistema no toma esos valores")
 
-lista_A= ["Lee","Brekae","Vi","Teemo","Darius","Garen","Bardo","Ezreal","Taric","Ahri","Zed"]
-lista_B=["Nautilus","Jinx","Quixana","Hecarim","Zac","Veigar","Xin","Blis","Tresh","Lucian","Sett"]
+print("Escoja un número entre el 1 al 100 con respecto a las cartas normales y entre el 1 al 5 para el personaje exclusivo premium")
 
-print(lista_A)
-print(lista_B)
-
-x=int(input("""Digite entre el 1 y el 10 para elegir a tu top
+personaje_1=int(input("""Personaje Estandar 1
 """))
-c=int(input("""Digite entre el 1 y el 10 para elegir a tu Jungla
+personaje_2=int(input("""Personaje Estandar 2
 """))
-v=int(input("""Digite entre el 1 y el 10 para elegir a tu MidLaner
+personaje_3=int(input("""Personaje Estandar 3
 """))
-b=int(input("""Digite entre el 1 y el 10 para elegir a tu Adc
+personaje_4=int(input("""Personaje Estandar 4
 """))
-n=int(input("""Digite entre el 1 y el 10 Para elegir a tu Supp
+personaje_5=int(input("""Personaje Estandar 5
+"""))
+personaje_premium=int(input("""Personaje premium
 """))
 
-combinador(x,c,v,b,n)
-Lista_Nueva_R_2=combinador
+combinador(personaje_1,personaje_2,personaje_3,personaje_4,personaje_5,personaje_premium)
 
-print("Tu equipo es el siguiente",combinador)
+juego=combinador
+
+print("Su juego constara de los siguientes personajes",juego,"Siendo",premium[personaje_premium],"Su personaje exclusivo")
