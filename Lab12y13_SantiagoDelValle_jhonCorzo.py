@@ -33,8 +33,9 @@ def combinador(personaje_1,personaje_2,personaje_3,personaje_4,personaje_5,perso
     cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
     premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
     Lista_R2=[cartas[personaje_1-1],cartas[personaje_2-1],cartas[personaje_3-1],cartas[personaje_4-1],cartas[personaje_5-1],premium[personaje_premium-1]]
+    print(Lista_R2)
     return Lista_R2
-
+    
 print("Escoja un número entre el 1 al 100 con respecto a las cartas normales y entre el 1 al 5 para el personaje exclusivo premium")
 
 personaje_1=int(input("""Personaje Estandar 1
@@ -80,5 +81,29 @@ else:
     print("Por favor haga bien los procedimientos")
 
 #Creación de paquete
-paquete=[sobre_1[0],sobre_2[3],sobre_3[4],sobre_1[2],sobre_2[1]]
-print ("La combinación de su paquete es ",paquete)
+
+if diferencia==5: 
+    paquete=[sobre_1[0],sobre_2[3],sobre_3[4],sobre_1[2],sobre_2[1]]
+    print ("La combinación de su paquete es ",paquete)
+    p=int(input("""Digite un numero del 1 al 10 el cual si le atina tiene la posibilidad de recibir una carta exclusiva
+    """))
+else:
+    print("Por favor haga bien los procedimientos")
+
+#creación de la función loteria
+
+def loteria(p):
+
+    if diferencia==5: 
+        if p==7:
+            paquete.append(premium[p-6])
+            print("Felicitaciones , ahora su paquete sera",paquete,"Con la imprementacion de la carta exclusiva",premium[p-6])
+        elif 0<p<=10:
+            print("Lo siento intente a la próxima , si baraja seguira siendo",paquete)
+        else:
+            if p<0 and p>10:
+                print("Por favor haga bien el procedimiento")
+    else:
+        print("Por favor haga bien los procedimientos")
+
+loteria(p)
