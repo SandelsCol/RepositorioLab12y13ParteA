@@ -1,3 +1,5 @@
+import random
+
 #Creación de la función imprimir 
 cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
 premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
@@ -11,19 +13,20 @@ imprimir(Conteo_final_Normal,Conteo_final_premium)
 
 #Creación de la función generador/Relación de cartas con generador
 def generador(n,p):
-    if 0<=n<=50 and 50<=p<=100:
+
         cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
-        jugador=cartas[n-1:p]
-        print("La nueva baraja llamada jugador contiene las siguientes cartas",jugador,"Siendo un total de",len(jugador),"cartas")
-    else:
-        print("El sistema no acepta esos números , siga por favor los procedimientos")
+        Lista_r1= cartas[n-1:p]
+        return Lista_r1
 
 n=int(input("""Digite Una cantidad de N elementos,Siendo 1 su minimo y 50 su máximo
 """))
 p=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su máximo
 """))
+
 generador(n,p)
-print(generador)
+jugador=generador
+
+print(jugador)
 
 #Creación de la función combinador/relacioón de cartas premium con normales con combinador
 
@@ -55,4 +58,31 @@ combinador(personaje_1,personaje_2,personaje_3,personaje_4,personaje_5,personaje
 
 juego=combinador
 
-print("Su juego constara de los siguientes personajes",juego,"Siendo",premium[personaje_premium],"Su personaje exclusivo")
+print("Su juego constara de los siguientes personajes",juego,"Siendo",premium[personaje_premium-1],"Su personaje exclusivo")
+
+#Creación de las listas Sobre_1 , Sobre_2 , Sobre_3
+
+
+p=int(input("""Digite dos digitos entre 1 y 100 
+"""))
+n=int(input("""Digite dos digitos entre 1 y 100 con una diferencia de 5 con respecto al sobre anterior
+"""))
+
+Sobre_x= generador(n,p-1)
+Sobre_y= generador(n+5 ,p+4)
+Sobre_z= generador(n+15,p+14)
+
+sobre_1=Sobre_x
+sobre_2=Sobre_y
+sobre_3=Sobre_z
+
+diferencia= p-n
+
+if diferencia==5: 
+    print("Su primer sobre es",sobre_1)
+    print("Su segundo sobre es",sobre_2)
+    print("Su tercer sobre es",sobre_3)
+else:
+    print("Por favor haga bien los procedimientos")
+
+
