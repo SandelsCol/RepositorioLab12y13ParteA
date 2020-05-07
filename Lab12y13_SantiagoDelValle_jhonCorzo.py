@@ -23,21 +23,17 @@ n=int(input("""Digite Una cantidad de N elementos,Siendo 1 su minimo y 50 su má
 p=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su máximo
 """))
 
-generador(n,p)
-jugador=generador
+jugador=generador(n,p)
 
-print(jugador)
+print("La cartas correspondientes son",jugador)
 
 #Creación de la función combinador/relacioón de cartas premium con normales con combinador
 
 def combinador(personaje_1,personaje_2,personaje_3,personaje_4,personaje_5,personaje_premium):
-    if 1<=personaje_1<=100 and 1<=personaje_2<=100 and 1<=personaje_3<=100  and 1<=personaje_4<=100 and 1<=personaje_5<=100 and 1<=personaje_premium<=5:
-        cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
-        premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
-        Lista_R2=[cartas[personaje_1-1],cartas[personaje_2-1],cartas[personaje_3-1],cartas[personaje_4-1],cartas[personaje_5-1],premium[personaje_premium-1]]
-        print(Lista_R2)
-    else:
-        print("El sistema no toma esos valores")
+    cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
+    premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
+    Lista_R2=[cartas[personaje_1-1],cartas[personaje_2-1],cartas[personaje_3-1],cartas[personaje_4-1],cartas[personaje_5-1],premium[personaje_premium-1]]
+    return Lista_R2
 
 print("Escoja un número entre el 1 al 100 con respecto a las cartas normales y entre el 1 al 5 para el personaje exclusivo premium")
 
@@ -59,19 +55,17 @@ combinador(personaje_1,personaje_2,personaje_3,personaje_4,personaje_5,personaje
 juego=combinador
 
 print("Su juego constara de los siguientes personajes",juego,"Siendo",premium[personaje_premium-1],"Su personaje exclusivo")
+print(combinador)
 
 #Creación de las listas Sobre_1 , Sobre_2 , Sobre_3
-
 
 p=int(input("""Digite dos digitos entre 1 y 100 
 """))
 n=int(input("""Digite dos digitos entre 1 y 100 con una diferencia de 5 con respecto al sobre anterior
 """))
-
 Sobre_x= generador(n,p-1)
 Sobre_y= generador(n+5 ,p+4)
 Sobre_z= generador(n+15,p+14)
-
 sobre_1=Sobre_x
 sobre_2=Sobre_y
 sobre_3=Sobre_z
@@ -85,4 +79,6 @@ if diferencia==5:
 else:
     print("Por favor haga bien los procedimientos")
 
-
+#Creación de paquete
+paquete=[sobre_1[0],sobre_2[3],sobre_3[4],sobre_1[2],sobre_2[1]]
+print ("La combinación de su paquete es ",paquete)
