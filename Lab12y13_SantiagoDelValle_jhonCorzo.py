@@ -23,3 +23,33 @@ p=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su m
 """))
 generador(n,p)
 print(generador)
+
+#Creación de la función combinador
+
+def combinador(x,c,v,b,n):
+    lista_A= ["Lee","Brekae","Vi","Teemo","Darius","Garen","Bardo","Ezreal","Taric","Ahri","Zed"]
+    lista_B=["Nautilus","Jinx","Quixana","Hecarim","Zac","Veigar","Xin","Blis","Tresh","Lucian","Sett"]
+    Lista_R2=[lista_A[x-1],lista_B[c-1],lista_A[v-1],lista_B[b-1],lista_A[n-1]]
+    print("La nueva lista es",Lista_R2)
+
+lista_A= ["Lee","Brekae","Vi","Teemo","Darius","Garen","Bardo","Ezreal","Taric","Ahri","Zed"]
+lista_B=["Nautilus","Jinx","Quixana","Hecarim","Zac","Veigar","Xin","Blis","Tresh","Lucian","Sett"]
+
+print(lista_A)
+print(lista_B)
+
+x=int(input("""Digite entre el 1 y el 10 para elegir a tu top
+"""))
+c=int(input("""Digite entre el 1 y el 10 para elegir a tu Jungla
+"""))
+v=int(input("""Digite entre el 1 y el 10 para elegir a tu MidLaner
+"""))
+b=int(input("""Digite entre el 1 y el 10 para elegir a tu Adc
+"""))
+n=int(input("""Digite entre el 1 y el 10 Para elegir a tu Supp
+"""))
+
+combinador(x,c,v,b,n)
+Lista_Nueva_R_2=combinador
+
+print("Tu equipo es el siguiente",combinador)
