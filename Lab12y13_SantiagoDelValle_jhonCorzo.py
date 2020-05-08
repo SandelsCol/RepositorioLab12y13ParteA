@@ -96,8 +96,9 @@ def loteria(p):
 
     if diferencia==5: 
         if p==7:
-            paquete.append(premium[p-6])
-            print("Felicitaciones , ahora su paquete sera",paquete,"Con la imprementacion de la carta exclusiva",premium[p-6])
+            Paquete_3=paquete.append(premium[p-6])
+            print("Felicitaciones , ahora su paquete sera",Paquete_3,"Con la imprementacion de la carta exclusiva",premium[p-6])
+            return Paquete_3
         elif 0<p<=10:
             print("Lo siento intente a la próxima , si baraja seguira siendo",paquete)
         else:
@@ -107,3 +108,18 @@ def loteria(p):
         print("Por favor haga bien los procedimientos")
 
 loteria(p)
+
+#Cartas premium:
+
+uno_1=int(input("""Digite Una cantidad de N elementos,Siendo 1 su minimo y 50 su máximo
+"""))
+dos_2=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su máximo
+"""))
+paquete=[sobre_1[0],sobre_2[3],sobre_3[4],sobre_1[2],sobre_2[1]]
+Lista_r1= cartas[uno_1-1:dos_2]
+Juego_Pro=[Lista_r1,paquete,premium[p-6]]
+print("Su combinación es",Juego_Pro)
+Tamaño_Premium=Juego_Pro[2]
+print("Sus cartas premiums son",Juego_Pro[2],"Siendo un total de",len(Tamaño_Premium),"Cartas")
+
+
