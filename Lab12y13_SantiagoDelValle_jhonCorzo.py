@@ -109,17 +109,36 @@ def loteria(p):
 
 loteria(p)
 
-#Cartas premium:
+#Cartas premium /Creación del paquete final
 
-uno_1=int(input("""Digite Una cantidad de N elementos,Siendo 1 su minimo y 50 su máximo
+var_1=int(input("""Digite un numero del 1 al 100
 """))
-dos_2=int(input("""Digite Una cantidad de N elementos,Siendo 50 su minimo y 100 su máximo
+var_2=int(input("""Digite un numero del 1 al 100
 """))
+
+cartas = ["Payne" , "Hendrix" , "Stone", "Coffey" , "Whitaker" , "Pope" , "Bleach" , "Arc" , "Fleming" , "Hardin" , "Robiar" , "Mccullough" , "Mooney" , "Reynolds" , "Short" , "Stanton" , "Deadman" , "Stonehammer" , "Smith" , "Patrick", "Crane" , "Cargane" , "Powers" , "Wade" , "Joseph" , "Savage" , "Houston", "Merritt" , "Nuke" , "Barnett" , "Acosta" , "Duke" , "Sellers" , "Blake", "Schneider" , "Stone" , "Cannon" , "Garrison" , "Randall" , "Leon" , "Buck" , "Shannon" , "Delaney" , "Mckinney" , "Dodademocles" , "Flowers" , "Whitehead" , "Kirby" , "Park" , "Shannon" , "Vlad" , "Pepin" , "Mcguire" , "Murray" , "Rush" , "Aramis" , "Fletcher" , "Mcfadden" , "Deleon" , "Luke" , "Lindsay" , "Payne" , "Gerbvo" , "Hubbard" , "Burnett" , "Bryan" , "Ratliff" , "Carlson" , "Parsons" , "Deadmeat" , "Crimson", "Wilson" , "Terry" , "Hancock" , "Hightower" , "Burns" , "Austin" , "Nightwalker" , "Thetis" , "Owen" , "Tate" , "Simmons" , "Grant" , "Barber" , "Talos" , "Ashes" , "Alston" , "Clayton" , "Mcbride" , "Huffman" , "Lightbringer" , "Blankenship" , "Higgins" , "Saint" , "Graham" , "Hodor" , "Ellison" , "Roberts" , "Odom" , "Mann"]
+Lista_r1= cartas[var_1-1:var_2]
 paquete=[sobre_1[0],sobre_2[3],sobre_3[4],sobre_1[2],sobre_2[1]]
-Lista_r1= cartas[uno_1-1:dos_2]
-Juego_Pro=[Lista_r1,paquete,premium[p-6]]
-print("Su combinación es",Juego_Pro)
-Tamaño_Premium=Juego_Pro[2]
-print("Sus cartas premiums son",Juego_Pro[2],"Siendo un total de",len(Tamaño_Premium),"Cartas")
+paquete_final= [paquete,Lista_r1,premium[p-6]]
+print("Su paquete final es",paquete_final,"Y su carta premium es ",premium[p-6],"Siendo la única por naturaleza del sistema")
 
+#Puntos del 11 al 18
 
+repetido=[]
+unico=[]
+
+for x in paquete_final:
+	if x not in unico:
+		unico.append(x)
+	else:
+		if x not in paquete_final:
+			repetido.append(x)
+
+print("Las cartas repetidas son",repetido)
+print("Las cartas unicas son",unico)
+
+print("El nombre menos grande es",len(paquete_final[0]),"Letras")
+print("El nombre mas grande es",len(paquete_final[-1]),"Letras")
+
+Var=len(premium[p-6])
+print("no tiene esa carta premium")
